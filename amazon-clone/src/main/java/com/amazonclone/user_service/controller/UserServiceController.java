@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/userservice")
 public class UserServiceController {
     @Autowired
-    @Qualifier(value="amazonUserService")
+//    @Qualifier(value="")
     private UserService userService;
-    @PostMapping("/save-user}")
+    @PostMapping("/save_user")
     public ResponseEntity<UserDataDto> saveUser(@RequestBody UserDataDto userDataDto){
         UserDataDto responseDto=userService.createNewUser(userDataDto);
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
-    @GetMapping("/get-user/{username}")
+    @GetMapping("/get_user/{username}")
     public ResponseEntity<UserDataDto> getUserByUsername(@PathVariable(name="username") String username) throws Exception {
         return new ResponseEntity<>(userService.getUserByUsername(username),HttpStatus.OK);
     }
