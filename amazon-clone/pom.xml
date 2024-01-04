@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.amazon-clone</groupId>
-	<artifactId>amazon-clone</artifactId>
+	<artifactId>Amazon-UserService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>amazon-clone</name>
 	<description>Demo project for an E-Commerce App</description>
