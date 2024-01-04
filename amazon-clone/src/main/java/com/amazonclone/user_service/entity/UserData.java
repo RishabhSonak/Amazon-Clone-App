@@ -1,4 +1,4 @@
-package com.amazonclone.entity;
+package com.amazonclone.user_service.entity;
 
 import jakarta.persistence.*;
 import java.util.Objects;
