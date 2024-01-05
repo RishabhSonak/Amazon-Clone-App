@@ -13,15 +13,17 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     private UsersDataRepo amazonUsersRepo;
-
+    @Autowired
+//    @Qualifier(value="")
+    private Util util;
     public UserDataDto createNewUser(UserDataDto userDataDto) {
-        return Util.entityToDto(amazonUsersRepo.save(Util.dtoToEntity(userDataDto)));
+        return util.entityToDto(amazonUsersRepo.save(util.dtoToEntity(userDataDto)));
     }
 
     public UserDataDto getUserByUsername(String username) throws Exception {
         Optional<UserData> userDataOptional= amazonUsersRepo.findUserDataByUsername(username);
         if(userDataOptional.isPresent()){
-            return Util.entityToDto(amazonUsersRepo.findUserDataByUsername(username).get());
+            return util.entityToDto(amazonUsersRepo.findUserDataByUsername(username).get());
         }
         else throw new Exception("user not found");
     }
